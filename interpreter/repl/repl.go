@@ -12,7 +12,8 @@ import (
 	"monkey-go/interpreter/parser"
 )
 
-const MONKEY_FACE = `            __,__
+const MONKEY_FACE = `            
+            __,__
    .--.  .-"     "-.  .--.
   / .. \/  .-. .-.  \/ .. \
  | |  '|  /   Y   \  |'  | |
@@ -32,9 +33,8 @@ func Start(in io.Reader, out io.Writer) {
 	env := object.NewEnvironment()
 
 	for {
-		fmt.Fprintf(out, PROMPT)
+		fmt.Fprint(out, PROMPT)
 		scanned := scanner.Scan()
-
 		if !scanned {
 			return
 		}
@@ -53,13 +53,13 @@ func Start(in io.Reader, out io.Writer) {
 		evaluated := evaluator.Eval(program, env)
 		if evaluated != nil {
 			io.WriteString(out, evaluated.Inspect())
-			io.WriteString(out, "\n")
+			io.WriteString(out, "\r\n")
 		}
 	}
 }
 
 func printParserErrors(out io.Writer, errors []string) {
-	io.WriteString(out, MONKEY_FACE)
+	// io.WriteString(out, MONKEY_FACE)
 	io.WriteString(out, "Woops! We ran into some monkey business here!\n")
 	io.WriteString(out, " parser errors:\n")
 
