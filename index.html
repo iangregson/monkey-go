@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>monkey-go xterm</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/xterm@4.11.0/css/xterm.css"
+    />
+    <style>
+      html, body {
+        padding: 0;
+        margin: 0;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="terminal"></div>
+  
+  <!-- xterm -->
+  <script src="https://unpkg.com/xterm@4.19.0/lib/xterm.js"></script>
+  <script src="https://unpkg.com/xterm-addon-fit@0.5.0/lib/xterm-addon-fit.js"></script>
+  <script src="https://unpkg.com/xterm-addon-unicode11@0.3.0/lib/xterm-addon-unicode11.js"></script>
+  <script src="https://unpkg.com/xterm-addon-web-links@0.6.0/lib/xterm-addon-web-links.js"></script>
+  <script src="https://unpkg.com/xterm-pty@0.9.2/index.js"></script>
+  
+  <!-- Web assembly glue code -->
+  <script src="wasm_exec.js"></script>
+
+  <!-- entry point -->
+	<script src="main.js"></script>
+  </body>
+</html>
