@@ -24,3 +24,6 @@ cd interpreter/web-repl/public
 python3 -m http.server 9000 --bind 0.0.0.0
 ```
 
+**Or you can play with in online here**
+
+> [iangregson.github.io/monkey-go](https://iangregson.github.io/monkey-go)
